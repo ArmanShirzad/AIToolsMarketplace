@@ -2,7 +2,7 @@
 
 namespace AIToolsMarketplace.UnitOfWork
 {
-    public interface IUnitOfWork
+    public interface IUnitOfWork: IDisposable
     {
         public IProductRepository  Products { get;  }
         public IOrderRepository Orders { get;  }

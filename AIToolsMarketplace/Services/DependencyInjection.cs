@@ -1,4 +1,5 @@
-﻿using AIToolsMarketplace.Services.Token;
+﻿using AIToolsMarketplace.Services.Product;
+using AIToolsMarketplace.Services.Token;
 using AIToolsMarketplace.Services.User;
 
 using AutoMapper;
@@ -16,6 +17,8 @@ namespace AIToolsMarketplace.Services
             // Register your services here
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<ITokenService, TokenService>(); // Assuming TokenService is your JWT token generator
+            services.AddScoped<IProductService, ProductService>(); // Assuming TokenService is your JWT token generator
+
 
             // AutoMapper configuration
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

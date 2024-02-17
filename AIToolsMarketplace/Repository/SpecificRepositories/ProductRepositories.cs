@@ -11,13 +11,17 @@ namespace AIToolsMarketplace.Repository.SpecificRepositories
         {
 
         }
-        public async Task<IEnumerable<Product>> GetProductsAsync(int count)
-        {
 
-            return await _context.Products.OrderByDescending(p => p.Reviews.Count)
-                                            .Take(count)
-                                            .ToListAsync();
+        public IQueryable<Product> GetQueryable()
+        {
+            return _context.Set<Product>().AsQueryable();
         }
+
+        public void UpdateProduct(Product product) 
+        {
+            _context.Products.Update(product);
+        }
+
 
     }
 }
